@@ -1,153 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kayo Szolári — Archive</title>
-  <!-- Luxury + modern fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kayo Szolári</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --pastel-yellow: #FFF1B5;
-      --print-dark: #E6D88F;
-      --cream: #F5EBD6;
-      --copper: #B87333;
-    }
-      .hero .mascot {
-  max-width: 400px;
-  width: 100%;
-  margin-bottom: 2rem;
-  opacity: 0;
-  animation: fadeIn 1.5s ease forwards;
-}
-    }
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: var(--pastel-yellow);
-      color: #111;
-    }
-    header {
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 2px solid var(--print-dark);
-    }
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      letter-spacing: 2px;
-    }
-    nav a {
-      margin-left: 1.5rem;
-      text-decoration: none;
-      color: #111;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: var(--copper);
-    }
-    .hero {
-      text-align: center;
-      padding: 4rem 2rem;
-    }
-    .hero img {
-      max-width: 400px;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Montserrat', sans-serif; color: #fff; background-color: #000; }
+
+    /* Parallax Mascot Background with Drift */
+    .parallax-bg {
+      background-image: url('assets/images/MASCOT.png');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: fixed;
       width: 100%;
-      margin-bottom: 2rem;
+      height: 100%;
+      z-index: -2;
+      animation: drift 30s ease-in-out infinite alternate;
+    }
+
+    /* Drift Animation */
+    @keyframes drift {
+      0% { background-position: center; }
+      50% { background-position: calc(50% + 20px) center; }
+      100% { background-position: center; }
+    }
+
+    /* Amber Overlay */
+    .overlay {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(255,179,0,0.4), rgba(204,142,0,0.4));
+      z-index: -1;
+    }
+
+    /* Floating Animation */
+    .float {
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .hero img.logo {
+      max-width: 200px;
+      width: 100%;
+      margin-bottom: 1.5rem;
     }
     .hero h1 {
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
+      letter-spacing: 2px;
       margin-bottom: 1rem;
     }
     .hero p {
-      font-size: 1.1rem;
       max-width: 600px;
-      margin: 0 auto;
+      font-size: 1.1rem;
       line-height: 1.6;
     }
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      padding: 3rem 2rem;
-    }
-    .product-card {
-      background: white;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease;
-    }
-    .product-card:hover {
-      transform: translateY(-5px);
-    }
-    .product-card img {
-      width: 100%;
-      display: block;
-    }
-    .product-info {
-      padding: 1rem;
-    }
-    .product-info h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      margin: 0 0 0.5rem;
-    }
-    .product-info p {
-      font-size: 0.95rem;
-      color: #555;
-    }
-    footer {
+
+    /* About Section */
+    .about {
+      background-color: rgba(0,0,0,0.7);
+      padding: 4rem 2rem;
       text-align: center;
+    }
+    .about h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .about p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    /* Concierge Section */
+    .concierge {
+      background-color: rgba(0,0,0,0.85);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .concierge h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    .concierge p {
+      font-size: 1rem;
+      margin: 0.3rem 0;
+    }
+    .concierge a {
+      color: #FFB300;
+      text-decoration: none;
+    }
+    .concierge a:hover {
+      text-decoration: underline;
+    }
+
+    /* Socials */
+    .socials {
+      background-color: rgba(0,0,0,0.9);
       padding: 2rem;
-      font-size: 0.9rem;
-      color: #555;
-      border-top: 2px solid var(--print-dark);
+      text-align: center;
+    }
+    .socials a {
+      margin: 0 10px;
+      color: #FFB300;
+      font-size: 1.2rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .socials a:hover {
+      color: #FFD54F;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .about h2, .concierge h2 { font-size: 1.5rem; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">KAYO SZOLÁRI</div>
-    <nav>
-      <a href="#">Shop</a>
-      <a href="#">News</a>
-      <a href="#">Archive</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
 
+  <div class="parallax-bg"></div>
+  <div class="overlay"></div>
+
+  <!-- Hero Section -->
   <section class="hero">
-    <!-- Replace mascot.png with your actual mascot artwork -->
-    <img src="assets/images/MASCOT.png" alt="Kayo Szolári Mascot">
-    <h1>We Are Sun People</h1>
+    <img src="assets/images/aztec-sun-bg.jpg.png" alt="Kayo Szolári Aztec Sun Logo" class="logo float">
+    <h1 class="float">We Are Sun People</h1>
     <p>Luxury streetwear rooted in legacy, sacred design, and generational vision. Every drop is intentional — every detail, dynasty‑level.</p>
   </section>
 
-  <section class="products">
-    <!-- Example product cards — replace with your real drop images -->
-    <div class="product-card">
-      <img src="assets/images/hoodie.png" alt="Kayo Szolári Hoodie">
-      <div class="product-info">
-        <h3>Pastel Lila Hoodie</h3>
-        <p>Fear‑of‑God‑level heavyweight fleece with three‑panel hood and sacred detailing.</p>
-      </div>
-    </div>
-    <div class="product-card">
-      <img src="assets/images/sweats.png" alt="Kayo Szolári Sweats">
-      <div class="product-info">
-        <h3>Pastel Lila Sweats</h3>
-        <p>Levi’s‑512 inspired fit with flare, copper tips, and cream leather patch.</p>
-      </div>
-    </div>
+  <!-- About Section -->
+  <section class="about">
+    <h2>About Kayo Szolári</h2>
+    <p>Kayo Szolári is a sanctuary for the Sun People — a place where melanin, spirit, and legacy are honored in every stitch. We craft garments as heirlooms, designed to be worn, remembered, and passed forward. This is luxury without walls — a dynasty you belong to the moment you arrive.</p>
   </section>
 
-  <footer>
-    &copy; 2025 Kayo Szolári — All Rights Reserved
-  </footer>
+  <!-- Concierge Section -->
+  <section class="concierge">
+    <h2>Szolári Concierge</h2>
+    <p>Phone: <a href="tel:7136898762">713‑689‑8762</a></p>
+    <p>Email: <a href="mailto:kayoszolari@gmail.com">kayoszolari@gmail.com</a></p>
+    <p>Based in Houston, TX</p>
+  </section>
+
+  <!-- Socials -->
+  <section class="socials">
+    <a href="https://instagram.com/kayoszolari" target="_blank">Instagram</a>
+    <a href="https://tiktok.com/@kayoszolari" target="_blank">TikTok</a>
+    <a href="https://twitter.com/kayoszolari" target="_blank">Twitter/X</a>
+    <a href="https://facebook.com/kayoszolari" target="_blank">Facebook</a>
+  </section>
+
 </body>
 </html>
