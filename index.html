@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kayo Szolári</title>
+  <style>
+    body {
+      background-color: #FFF1B5; /* pastel yellow */
+      font-family: 'Playfair Display', serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      font-size: 3rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+    input[type="password"] {
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      background-color: #B87333; /* copper */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>KAYO SZOLÁRI</h1>
+  <input type="password" id="password" placeholder="Enter password" />
+  <button onclick="checkPassword()">Enter</button>
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById("password").value;
+      const correctPassword = "sunpeople"; // You can change this
+
+      if (input === correctPassword) {
+        window.location.href = "home.html"; // This is your real site
+      } else {
+        alert("Incorrect password. Try again.");
+      }
+    }
+  </script>
+</body>
+</html>
