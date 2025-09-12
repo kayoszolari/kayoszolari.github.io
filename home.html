@@ -39,14 +39,18 @@
       z-index: -1;
     }
 
-    /* Floating Animation */
-    .float {
-      animation: float 6s ease-in-out infinite;
+    /* Floating + Rotating Animation */
+    .float-rotate {
+      animation: float 6s ease-in-out infinite, rotate 60s linear infinite;
     }
     @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-15px); }
-      100% { transform: translateY(0px); }
+      0% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-15px) rotate(0deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
 
     /* Hero Section */
@@ -148,8 +152,8 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <img src="assets/images/aztec-sun-bg.jpg.png" alt="Kayo Szolári Aztec Sun Logo" class="logo float">
-    <h1 class="float">We Are Sun People</h1>
+    <img src="assets/images/aztec-sun-bg.jpg.png" alt="Kayo Szolári Aztec Sun Logo" class="logo float-rotate">
+    <h1>We Are Sun People</h1>
     <p>Luxury streetwear rooted in legacy, sacred design, and generational vision. Every drop is intentional — every detail, dynasty‑level.</p>
   </section>
 
