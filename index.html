@@ -4,39 +4,58 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kayo Szolári</title>
-  <style>
-    body {
-      background-color: #FFF1B5; /* pastel yellow */
-      font-family: 'Playfair Display', serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-    }
-    h1 {
-      font-size: 3rem;
-      color: #333;
-      margin-bottom: 1rem;
-    }
-    input[type="password"] {
-      padding: 0.5rem;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    button {
-      margin-top: 1rem;
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
-      background-color: #B87333; /* copper */
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-  </style>
+<style>
+  body {
+    background-color: #FFF1B5; /* pastel yellow */
+    font-family: 'Playfair Display', serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+  }
+  h1 {
+    font-size: 3rem;
+    color: #111;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    animation: fadeIn 1.5s ease forwards;
+  }
+  img {
+    max-width: 320px;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeIn 1.5s ease forwards;
+    animation-delay: 0.5s;
+  }
+  input[type="password"] {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+  button {
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    background-color: #B87333; /* copper */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  button:hover {
+    background-color: #a1622b;
+  }
+  @keyframes fadeIn {
+    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(20px); }
+  }
+</style>
 </head>
 <body>
   <h1>KAYO SZOLÁRI</h1>
